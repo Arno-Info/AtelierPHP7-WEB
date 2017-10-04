@@ -1,3 +1,5 @@
+
+
 <H1 align='center'>***  LISTE DES FILMS  ***</H1>
 
 <?php if (isset($_SESSION["utilConnecte"])) { ?>
@@ -19,8 +21,8 @@
             foreach ($films as $films) {
                 ?>  
                 <tr>
-                    <td><?php echo $films; ?></td>
-                    <td><a href="front_controller.php?action=supprime_films?titre="><?php echo $films ?><BUTTON name="AJOUT">SUPPRIMER FILM</BUTTON></a></td>
+                    <td><?php echo $films["titre"]; ?></td>
+                    <td><a href="front_controller.php?action=supprime_films&id"><BUTTON name="AJOUT">SUPPRIMER FILM</BUTTON></a></td>
                 </tr>        
             </TBODY>
             <?php

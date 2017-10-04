@@ -1,5 +1,7 @@
 <?php
 
+include_once './lib/lib_db.php';
+
 session_start();
 if (!isset($_SESSION["films"])) {
     $_SESSION["films"] = ["Dracula", "Kung fu panda", "Dora l'exploratice"];
@@ -11,10 +13,8 @@ if (!isset($_SESSION["films"])) {
 $pageContenu = "";
 switch ($action) {
     case "ajoute_films_post":
-        $titre[] = "nouv titre";
-        $_SESSION["films"] [] = $_REQUEST["titre"];
+        ajoutFilm($titre);
         header("Location: front_controller.php?action=liste_films");
-
         break;
 
     case "logout":
@@ -40,8 +40,7 @@ switch ($action) {
 
     case "liste_films":
         //$films : Récupère les films
-        $films=$_SESSION["films"];
-        //renvoyer a la vue
+        $films=lister();
         $pageContenu = './liste_films.php';
         break;
 
@@ -50,6 +49,7 @@ switch ($action) {
         break;
 
     case "ajoute_films":
+        ajoutFilm($titre);
         $pageContenu = './ajoute_films.php';
         break;
 
@@ -57,10 +57,7 @@ switch ($action) {
         break;
 
     case "supprime_films":
-        $indice = array_search($_REQUEST["titre"], $_SESSION["films"]);
-        if (!$indice && $indice != 0)
-            throw new Expection("ERREUR FATAL : titre non trouvé");
-        array_splice($_session["films"], $indice, 1);
+        supprimerFilm($_REQUEST["id"]);
         header("Location: front_controller.php?action=liste_films");
         break;
 
