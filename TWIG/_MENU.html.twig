@@ -1,0 +1,13 @@
+{# empty Twig template #}
+<div class="menu"><!--Menu commun a toutes mes pages-->
+    MENU :
+    <a href="front_controller.php?action=liste_films">FILMS</a>
+    <a href="front_controller.php?action=liste_series">SERIES</a>
+    {% if utilConnecte %}
+        <a href="front_controller.php?action=logout">Déconnexion</a>
+    {% else %}
+        <a href="front_controller.php?action=login">LOGIN</a>
+    {% endif %}
+    
+</div>
+

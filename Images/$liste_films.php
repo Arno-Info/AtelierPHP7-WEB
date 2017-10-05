@@ -3,7 +3,7 @@
 <H1 align='center'>***  LISTE DES FILMS  ***</H1>
 
 <?php if (isset($_SESSION["utilConnecte"])) { ?>
-    <a href="front_controller.php?action=ajoute_films"><BUTTON name="AJOUT">AJOUT D'UN FILM</BUTTON></a>
+    <a href="front_controller_twig.php?action=ajoute_films"><BUTTON name="AJOUT">AJOUT D'UN FILM</BUTTON></a>
     <h4> Connecté en tant que :  
         <?php
         echo $_SESSION["utilConnecte"];
@@ -22,7 +22,7 @@
                 ?>  
                 <tr>
                     <td><?php echo $films["titre"]; ?></td>
-                    <td><a href="front_controller.php?action=supprime_films&id"><BUTTON name="AJOUT">SUPPRIMER FILM</BUTTON></a></td>
+                    <td><a href="front_controller_twig.php?action=supprime_films&id"><BUTTON name="AJOUT">SUPPRIMER FILM</BUTTON></a></td>
                 </tr>        
             </TBODY>
             <?php

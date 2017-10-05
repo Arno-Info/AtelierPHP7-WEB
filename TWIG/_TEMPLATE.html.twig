@@ -1,0 +1,23 @@
+{# empty Twig template #}
+<html>
+    <head>
+
+    </head>
+    <body>
+        {% block header %}
+            {% include '_HEADER.html.twig' %}
+        {% endblock %}
+        
+        {% block menu %}
+            {% include '_MENU.html.twig' %}
+        {% endblock %}
+
+        {% block contenu %}
+            **** CONTENU PAR DEFAUT ****
+        {% endblock %}
+
+        {% block pied %}
+            {% include '_FOOTER.html.twig' %}
+        {% endblock %}
+    </body>
+</html>

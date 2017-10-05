@@ -1,0 +1,25 @@
+{# COMMENTAIRE TWIG #}
+{% extends '_TEMPLATE.html.twig' %}
+
+
+{% block contenu %}
+    <H1>LISTE DES FILMS</H1>
+    {# AFFICHE UN BOUTON AJOUT FILM SI ON EST CONNECTE #}
+    {% if utilConnecte %}
+        Vous êtes connecté en tant que : Admin
+        <br>
+        <br>             
+        <a href="front_controller.php?action=ajoute_films"><BUTTON name="AJOUT">AJOUTER FILM</BUTTON></a>
+        <br>
+        <br>   
+    {% endif %}
+    
+    {#balise twig = {% #}
+    {% for f in films %}
+        {% include '_MINIATURE_FILM.html.twig' with {titre: f.titre | capitalize | slice(0, 10), id: f.id} %}
+    {%endfor%}
+{% endblock %}
+
+
+
+

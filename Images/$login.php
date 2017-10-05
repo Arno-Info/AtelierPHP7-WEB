@@ -1,5 +1,5 @@
 <H1>IDENTIFICATION</H1>
-<form method="POST" action="front_controller.php?action=login_post">
+<form method="POST" action="front_controller_twig.php?action=login_post">
     <label>Identifiant</LABEL>
     <input name="login"/>
     <br>

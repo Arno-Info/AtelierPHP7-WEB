@@ -1,0 +1,11 @@
+{# empty Twig template #}
+{% extends '_TEMPLATE.html.twig' %}
+    {% block contenu %}
+        <H1 align='center'>***  AJOUT D'UN FILMS  ***</H1>
+        <br>
+        <form method="POST" action="front_controller.php?action=ajoute_films_post">
+            <label>TITRE DU FILM :</LABEL>
+            <INPUT name="titre"><br>
+            <INPUT type="submit" value="AJOUTER">
+        </form>
+    {% endblock %}

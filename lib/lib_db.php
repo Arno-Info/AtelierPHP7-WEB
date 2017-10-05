@@ -73,7 +73,7 @@ function lister():array {  //:array est le typage
     $pdo = new PDO(CHAINE_DE_CONNEXION, DB_USER);
         
     //EXECUTION DE LA REQUETE
-    $statement = $pdo->query("SELECT * FROM film ORDER BY titre");
+    $statement = $pdo->query("SELECT * FROM film ORDER BY id");
     return $statement->fetchAll();
     
 }
